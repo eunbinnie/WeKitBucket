@@ -4,7 +4,7 @@ import "@/styles/globals.css";
 import Toast from "@/components/Toast";
 import { ToastProvider } from "@/context/ToastContext";
 import { AuthProvider } from "@/context/AuthContext";
-import Header from "./_components/Header";
+import Header from "../components/common/Header";
 import "@mantine/tiptap/styles.css";
 import "@mantine/core/styles.css";
 

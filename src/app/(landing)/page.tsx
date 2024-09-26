@@ -9,7 +9,7 @@ import {
   backgroundImage,
 } from "public/images/landingImages";
 import RedirectButton from "@/components/RedirectButton";
-import SwiperSection from "./_components/Landing/SwiperSection";
+import SwiperSection from "./_components/SwiperSection";
 
 function HomePage() {
   return (

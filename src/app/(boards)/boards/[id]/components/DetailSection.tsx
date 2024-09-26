@@ -14,7 +14,7 @@ import deleteArticlesLike, { ArticleDetail } from "@/apis/article/deleteArticles
 import dayjs from "dayjs";
 import { useRouter } from "next/navigation";
 import deleteArticlesId from "@/apis/article/deleteArticlesId";
-import CommonModal from "@/components/CommonModal";
+import CommonModal from "@/components/modal/CommonModal";
 import DeleteModal from "./DeleteModal";
 import Content from "./Content";
 

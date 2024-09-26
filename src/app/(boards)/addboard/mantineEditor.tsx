@@ -16,7 +16,7 @@ import Image from "next/image";
 import ImageUpload from "public/icons/imageUpload.svg";
 import textColor from "public/icons/textColor.svg";
 
-import CommonModal from "@/components/CommonModal";
+import CommonModal from "@/components/modal/CommonModal";
 import postImage from "@/apis/image/postImage";
 import CameraIcon from "public/icons/camera.svg";
 import { Image as MantineImage, Popover } from "@mantine/core";
