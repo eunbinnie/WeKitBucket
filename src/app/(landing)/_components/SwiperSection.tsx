@@ -43,13 +43,14 @@ function SwiperSection() {
         {Array.from({ length: 8 }).map((_, index) => (
           <SwiperSlide key={String(index + 1)}>
             <div
-              className={`aspect-square h-full ${index % 2 === (toggle ? 1 : 0) ? "opacity-15" : "opacity-100"} transition-opacity duration-700`}
+              className={`relative aspect-square h-full ${index % 2 === (toggle ? 1 : 0) ? "opacity-15" : "opacity-100"} transition-opacity duration-700`}
             >
               <Image
                 src={`/images/landingSwiper${(index % 4) + 1}.webp`}
                 alt="슬라이드 이미지"
                 fill
                 sizes="max-width:100%"
+                priority
               />
             </div>
           </SwiperSlide>
