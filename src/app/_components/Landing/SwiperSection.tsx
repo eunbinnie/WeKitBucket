@@ -5,10 +5,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
-// import Slide1 from "@/assets/icons/landingSwiper1.svg";
-// import Slide2 from "@/assets/icons/landingSwiper2.svg";
-// import Slide3 from "@/assets/icons/landingSwiper3.svg";
-// import Slide4 from "@/assets/icons/landingSwiper4.svg";
 import Image from "next/image";
 
 function SwiperSection() {
@@ -50,7 +46,7 @@ function SwiperSection() {
               className={`aspect-square h-full ${index % 2 === (toggle ? 1 : 0) ? "opacity-15" : "opacity-100"} transition-opacity duration-700`}
             >
               <Image
-                src={`/images/landingSwiper${(index % 4) + 1}.svg`}
+                src={`/images/landingSwiper${(index % 4) + 1}.webp`}
                 alt="슬라이드 이미지"
                 fill
                 sizes="max-width:100%"
