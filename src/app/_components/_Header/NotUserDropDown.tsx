@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useSelectedLayoutSegments } from "next/navigation";
 
-import HamburgerMenu from "@/assets/icons/hamburgerMenu.svg";
+import HamburgerMenu from "public/icons/hamburgerMenu.svg";
 import Link from "next/link";
 import ModalComponent from "./ModalComponent";
 import MenuModalHeader from "./MenuModalHeader";

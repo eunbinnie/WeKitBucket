@@ -3,9 +3,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState } from "react";
-import DefaultProfile from "@/assets/icons/defaultProfile.svg";
-import EditIcon from "@/assets/icons/pencilIcon.svg";
-import DeleteIcon from "@/assets/icons/trashIcon.svg";
+import DefaultProfile from "public/icons/defaultProfile.svg";
+import EditIcon from "public/icons/pencilIcon.svg";
+import DeleteIcon from "public/icons/trashIcon.svg";
 import { ICommentList } from "@/apis/comment/getComment";
 import dayjs from "dayjs";
 import Image from "next/image";

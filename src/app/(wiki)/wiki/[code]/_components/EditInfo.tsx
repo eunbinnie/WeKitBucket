@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import Image from "next/image";
 import { ChangeEvent, useState } from "react";
-import defalutUserImage from "@/assets/icons/defaultProfile.svg";
-import Camera from "@/assets/icons/camera.svg";
+import defalutUserImage from "public/icons/defaultProfile.svg";
+import Camera from "public/icons/camera.svg";
 import postImage from "@/apis/image/postImage";
 import { InfoType } from "./TypeList";
 import Input from "./Input";

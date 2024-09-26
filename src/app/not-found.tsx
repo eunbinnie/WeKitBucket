@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Empty from "@/assets/icons/questionMark.svg";
+import Empty from "public/icons/questionMark.svg";
 
 function NotFound() {
   return (

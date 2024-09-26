@@ -1,6 +1,6 @@
 import Image from "next/image";
-import UserDafalutImage from "@/assets/icons/defaultProfile.svg";
-import ArrowdownImage from "../../../../../assets/icons/arrowdown.svg";
+import UserDafalutImage from "public/icons/defaultProfile.svg";
+import ArrowdownImage from "public/icons/arrowdown.svg";
 import { InfoType } from "./TypeList";
 
 type ProfileCardProps = {

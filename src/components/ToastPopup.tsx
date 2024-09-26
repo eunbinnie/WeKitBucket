@@ -1,8 +1,8 @@
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import AlertIcon from "@/assets/icons/snackbar_alert.svg";
-import InfoIcon from "@/assets/icons/snackbar_info.svg";
-import CheckIcon from "@/assets/icons/snackbar_check.svg";
+import AlertIcon from "public/icons/snackbar_alert.svg";
+import InfoIcon from "public/icons/snackbar_info.svg";
+import CheckIcon from "public/icons/snackbar_check.svg";
 
 export default function ToastPopup({
   message,

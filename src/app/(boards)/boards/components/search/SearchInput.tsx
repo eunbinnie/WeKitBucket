@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import SearchIcon from "@/assets/icons/search.svg";
+import SearchIcon from "public/icons/search.svg";
 
 function SearchInput({ onChange, value }: React.InputHTMLAttributes<HTMLInputElement>) {
   return (

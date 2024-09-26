@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import debounce from "@/utils/debounce";
 
-import Logo from "@/assets/icons/logo.svg";
+import Logo from "public/icons/logo.svg";
 import { useSelectedLayoutSegments } from "next/navigation";
 
 export default function HeaderLeft() {

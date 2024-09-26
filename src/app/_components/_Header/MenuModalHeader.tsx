@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import WikidLogo from "@/assets/icons/wikidLogo.svg";
+import WikidLogo from "public/icons/wikidLogo.svg";
 
 export default function MenuModalHeader({ onClose }: { onClose: () => void }) {
   return (
