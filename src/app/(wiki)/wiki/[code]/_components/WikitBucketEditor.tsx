@@ -51,7 +51,6 @@ function uploadAdapter(loader: FileLoader): UploadAdapter {
           const file = await loader.file;
           if (file) {
             const result = await postImage(file);
-            console.log(result.url);
             resolve({
               default: result.url,
             });
@@ -67,7 +66,6 @@ function uploadAdapter(loader: FileLoader): UploadAdapter {
 
 function uploadPlugin(editor: Editor) {
   editor.plugins.get("FileRepository").createUploadAdapter = loader => {
-    // console.log(loader.file);
     return uploadAdapter(loader);
   };
 }

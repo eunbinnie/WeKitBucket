@@ -55,7 +55,7 @@ function Wiki({ params }: { params: { code: string } }) {
       try {
         const users = await getUsersMe();
 
-        const myWikiPage = code === users.profile.code;
+        const myWikiPage = code === users?.profile.code;
         setMyWiKi(myWikiPage);
 
         const selectPageCode = code;
@@ -121,8 +121,6 @@ function Wiki({ params }: { params: { code: string } }) {
   };
 
   const handleSubmit = async () => {
-    console.log(formData);
-
     const responseData = await patchProfilesCode(code, formData);
     if (responseData) {
       popupToast({ color: "red", pos: "top", message: "데이터 반영이 실패하였습니다.", width: 320 });
@@ -179,7 +177,6 @@ function Wiki({ params }: { params: { code: string } }) {
   };
 
   const handleEditEnd = () => {
-    console.log(formData);
     setEditing(false);
     if (clearTime) {
       clearTimeout(clearTime);

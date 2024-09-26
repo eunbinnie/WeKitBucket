@@ -43,8 +43,6 @@ function EditInfo({ handleChangeData, image, handleChange }: ProfileProps) {
 
   const handleChangeEvent = (e: ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
-    console.log(id);
-    console.log(value);
     handleChangeData(id, value);
   };
 

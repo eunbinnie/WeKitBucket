@@ -55,7 +55,6 @@ export default function MessageAlarm({
       getAlarmMessages();
     } else if (alarmMessages.length === count) setHasMore();
 
-    console.log(alarmMessages.length);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView]);
 
