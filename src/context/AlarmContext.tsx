@@ -29,8 +29,6 @@ function AlarmProvider({ children }: { children: ReactNode }) {
 
   const getAlarmMessages = async () => {
     const { totalCount, list } = await GetNotificationOptions({ page, pageSize: 10 });
-    console.log(totalCount);
-    // console.log(list?.length);
     if (list) {
       setAlarmMessages(prev => [...prev, ...list]);
       setPage(prev => prev + 1);

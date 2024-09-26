@@ -6,6 +6,10 @@ import { cookies } from "next/headers";
 
 const getUsersMe = async () => {
   try {
+    if (!cookies().get("refreshToken")) {
+      return null;
+    }
+
     const data = await fetchInstance<IUser>("users/me", {
       method: "GET",
     });

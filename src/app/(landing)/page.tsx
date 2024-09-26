@@ -18,8 +18,8 @@ function HomePage() {
         <Image
           className="xl: absolute bottom-0 left-0 h-[714px] w-full md:h-[1059px] xl:h-[1412px]"
           src={backgroundImage}
-          // style={{ zIndex: -1 }}
           alt="backgroundImage"
+          priority
         />
         <div className="z-[1] flex flex-col items-center">
           <p className="mt-[160px] text-center text-lg-light text-primary-gray-500 md:mt-[180px] md:text-3xl-light xl:mt-[200px]">
@@ -31,6 +31,7 @@ function HomePage() {
             className="mt-[44px] w-[336px] md:mt-[54px] md:w-[498px]"
             src={topSectionItem1}
             alt="Top Section Item 1"
+            priority
           />
           <div className="mt-[100px] flex w-full justify-center gap-[10px] md:mt-[153px] md:gap-[20px] xl:gap-[40px]">
             <div className="flex h-[250px] flex-col justify-between md:h-[479px] xl:h-[681px]">
@@ -41,9 +42,9 @@ function HomePage() {
                   직접 작성해 봐요
                 </p>
               </div>
-              <Image className="w-[133px] md:w-[262px] xl:w-[364px]" src={landingKeyboard} alt="test" />
+              <Image className="w-[133px] md:w-[262px] xl:w-[364px]" src={landingKeyboard} alt="test" priority />
             </div>
-            <Image className="w-[192px] md:w-[365px] xl:w-[520px]" src={landingWrite} alt="test" />
+            <Image className="w-[192px] md:w-[365px] xl:w-[520px]" src={landingWrite} alt="test" priority />
           </div>
         </div>
       </section>
@@ -72,10 +73,10 @@ function HomePage() {
         </div>
 
         <div className="mx-auto mt-[40px] flex flex-col gap-[10px] md:mt-[80px] md:gap-[22px] xl:gap-[40px]">
-          <Image className="w-[335px] md:w-[648px] xl:w-[924px]" src={bottomSectionItem1} alt="test" />
+          <Image className="w-[335px] md:w-[648px] xl:w-[924px]" src={bottomSectionItem1} alt="test" priority />
           <div className="flex gap-[10px] md:gap-[22px] xl:gap-[40px]">
             <div className="w-[102px] overflow-hidden rounded-[20px] bg-[#adedde] bg-[url('/images/loading.gif')] bg-[length:200%] bg-[center_calc(50%-9px)] bg-no-repeat md:w-[198px] md:bg-[center_calc(50%-17px)] xl:w-[280px]" />
-            <Image className="w-[223px] md:w-[428px] xl:w-[604px]" src={bottomSectionItem3} alt="test" />
+            <Image className="w-[223px] md:w-[428px] xl:w-[604px]" src={bottomSectionItem3} alt="test" priority />
           </div>
         </div>
       </section>
