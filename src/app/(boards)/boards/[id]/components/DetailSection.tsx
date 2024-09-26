@@ -6,15 +6,15 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useState } from "react";
 import Link from "next/link";
-import EditIcon from "@/assets/icons/pencilIcon.svg";
-import DeleteIcon from "@/assets/icons/trashIcon.svg";
-import LikeIcon from "@/assets/icons/like.svg";
+import EditIcon from "public/icons/pencilIcon.svg";
+import DeleteIcon from "public/icons/trashIcon.svg";
+import LikeIcon from "public/icons/like.svg";
 import postArticlesLike from "@/apis/article/postArticlesLike";
 import deleteArticlesLike, { ArticleDetail } from "@/apis/article/deleteArticlesLike";
 import dayjs from "dayjs";
 import { useRouter } from "next/navigation";
 import deleteArticlesId from "@/apis/article/deleteArticlesId";
-import CommonModal from "@/components/CommonModal";
+import CommonModal from "@/components/modal/CommonModal";
 import DeleteModal from "./DeleteModal";
 import Content from "./Content";
 

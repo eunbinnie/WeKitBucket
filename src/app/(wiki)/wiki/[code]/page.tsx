@@ -8,12 +8,12 @@
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
-import LinkImage from "@/assets/icons/link.svg";
+import LinkImage from "public/icons/link.svg";
 import getProfilesCode from "@/apis/profile/getProfilesCode";
 import getProfilesCodePing from "@/apis/profile/getProfilesCodePing";
 import patchProfilesCode from "@/apis/profile/patchProfilesCode";
 import getUsersMe from "@/apis/user/getUsersMe";
-import CommonModal from "@/components/CommonModal";
+import CommonModal from "@/components/modal/CommonModal";
 import { useToast } from "@/context/ToastContext";
 import WikitBucketEditor from "./_components/WikitBucketEditor";
 import QuizModal from "./_components/QuizModal";

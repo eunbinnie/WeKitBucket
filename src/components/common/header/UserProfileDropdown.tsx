@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter, useSelectedLayoutSegments } from "next/navigation";
 import useImageLoad from "@/hooks/useImageLoad";
-import UserProfile from "@/assets/icons/userProfileIcon.svg";
+import UserProfile from "public/icons/userProfileIcon.svg";
 import postSignout from "@/apis/auth/postSignout";
 import { useAuth } from "@/context/AuthContext";
 

@@ -8,7 +8,7 @@ import postSignout from "@/apis/auth/postSignout";
 import { useAuth } from "@/context/AuthContext";
 
 import useToggle from "@/hooks/useToggle";
-import HamburgerMenu from "@/assets/icons/hamburgerMenu.svg";
+import HamburgerMenu from "public/icons/hamburgerMenu.svg";
 import ModalComponent from "./ModalComponent";
 import MenuModalHeader from "./MenuModalHeader";
 import AlarmModal from "./AlarmModal";

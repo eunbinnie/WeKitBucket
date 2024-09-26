@@ -1,4 +1,4 @@
-import { RequestNotifications } from "@/types/alarm";
+import { RequestNotifications } from "@/types/alarm.types";
 import fetchInstance from "@/utils/fetchInstance";
 
 const getNotificationOptions = async (options: { page?: number; pageSize?: number }) => {

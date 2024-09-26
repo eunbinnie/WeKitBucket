@@ -3,7 +3,7 @@
 import { createContext, useContext, useState, ReactNode, useMemo } from "react";
 
 import GetNotificationOptions from "@/apis/notification/getNotifications";
-import { IAlarmMessage } from "@/types/alarm";
+import { IAlarmMessage } from "@/types/alarm.types";
 import deleteNotifications from "@/apis/notification/deleteNotifications";
 
 interface AlarmContextType {

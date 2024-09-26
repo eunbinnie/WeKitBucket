@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import NoProfilePicture from "@/assets/icons/noProfilePicture.svg";
-import LinkIcon from "@/assets/icons/link.svg";
+import NoProfilePicture from "public/icons/noProfilePicture.svg";
+import LinkIcon from "public/icons/link.svg";
 import Link from "next/link";
 import Image from "next/image";
 import { ProfileCatalog } from "@/types/profiles.type";

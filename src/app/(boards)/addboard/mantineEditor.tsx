@@ -13,12 +13,12 @@ import BulletList from "@tiptap/extension-bullet-list";
 import OrderedList from "@tiptap/extension-ordered-list";
 import Placeholder from "@tiptap/extension-placeholder";
 import Image from "next/image";
-import ImageUpload from "@/assets/icons/imageUpload.png";
-import textColor from "@/assets/icons/textColor.png";
+import ImageUpload from "public/icons/imageUpload.svg";
+import textColor from "public/icons/textColor.svg";
 
-import CommonModal from "@/components/CommonModal";
+import CommonModal from "@/components/modal/CommonModal";
 import postImage from "@/apis/image/postImage";
-import CameraIcon from "@/assets/icons/camera.svg";
+import CameraIcon from "public/icons/camera.svg";
 import { Image as MantineImage, Popover } from "@mantine/core";
 import ImageExtension from "@tiptap/extension-image";
 import "./addboardStyles.css";

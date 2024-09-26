@@ -1,4 +1,4 @@
-import Lock from "@/assets/icons/lock.svg";
+import Lock from "public/icons/lock.svg";
 import { SubmitHandler, useForm } from "react-hook-form";
 import postProfilesCodePing from "@/apis/profile/postProfilesCodePing";
 import { useToast } from "@/context/ToastContext";

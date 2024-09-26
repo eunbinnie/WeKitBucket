@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import LeftArrow from "@/assets/icons/leftArrow.svg";
-import RightArrow from "@/assets/icons/rightArrow.svg";
+import LeftArrow from "public/icons/leftArrow.svg";
+import RightArrow from "public/icons/rightArrow.svg";
 import PageItem from "./PageItem";
 
 type PaginationProps = {

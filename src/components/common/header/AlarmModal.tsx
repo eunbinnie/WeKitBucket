@@ -8,7 +8,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import "dayjs/locale/ko";
 import { useAlarm } from "@/context/AlarmContext";
 import useToggle from "@/hooks/useToggle";
-import NoAlarmMessage from "@/app/_components/_Header/NoAlarmMessage";
+import NoAlarmMessage from "@/components/common/header/NoAlarmMessage";
 import AlarmModalHeader from "./AlarmModalHeader";
 import ModalComponent from "./ModalComponent";
 

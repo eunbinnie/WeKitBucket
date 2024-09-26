@@ -7,9 +7,9 @@ import {
   bottomSectionItem1,
   bottomSectionItem3,
   backgroundImage,
-} from "@/assets/index";
+} from "public/images/landingImages";
 import RedirectButton from "@/components/RedirectButton";
-import SwiperSection from "./_components/Landing/SwiperSection";
+import SwiperSection from "./_components/SwiperSection";
 
 function HomePage() {
   return (

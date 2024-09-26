@@ -5,8 +5,8 @@ import dayjs from "dayjs";
 import Link from "next/link";
 import NextImage from "next/image";
 import useImageLoad from "@/hooks/useImageLoad";
-import LikeIcon from "@/assets/icons/like.svg";
-import CameraIcon from "@/assets/icons/camera.svg";
+import LikeIcon from "public/icons/like.svg";
+import CameraIcon from "public/icons/camera.svg";
 import { IPostProps } from "../allArticles/PostList";
 
 function BestPostCard({ post }: IPostProps) {

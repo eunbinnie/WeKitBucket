@@ -1,5 +1,5 @@
 import React from "react";
-import WikidMark from "@/assets/images/landingLogo.webp";
+import WikidMark from "public/images/landingLogo.webp";
 import Image from "next/image";
 
 export default function NoAlarmMessage() {

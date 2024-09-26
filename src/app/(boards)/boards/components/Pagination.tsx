@@ -2,8 +2,8 @@
 
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useEffect, useState } from "react";
-import PrevIcon from "@/assets/icons/prev.svg";
-import NextIcon from "@/assets/icons/next.svg";
+import PrevIcon from "public/icons/prev.svg";
+import NextIcon from "public/icons/next.svg";
 
 interface IPaginationProps {
   totalCount: number;

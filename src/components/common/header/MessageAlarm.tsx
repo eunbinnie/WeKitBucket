@@ -9,7 +9,7 @@ import "dayjs/locale/ko";
 
 import useToggle from "@/hooks/useToggle";
 import { useAlarm } from "@/context/AlarmContext";
-import Alarm from "@/assets/icons/alarmIcon.svg";
+import Alarm from "public/icons/alarmIcon.svg";
 import NoAlarmMessage from "./NoAlarmMessage";
 
 dayjs.locale("ko");

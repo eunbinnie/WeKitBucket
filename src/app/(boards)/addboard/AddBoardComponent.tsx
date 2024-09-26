@@ -7,7 +7,7 @@ import postArticles, { ArticleInput } from "@/apis/article/postArticles";
 import patchArticlesId from "@/apis/article/patchArticlesId";
 import getArticlesId from "@/apis/article/getArticlesId";
 import getUsersMe from "@/apis/user/getUsersMe";
-import Modal from "@/components/Modal";
+import Modal from "@/components/modal/Modal";
 import CustomButton from "./CustomButton";
 import MantineEditor from "./mantineEditor";
 
