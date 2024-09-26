@@ -12,9 +12,8 @@ import TextStyle from "@tiptap/extension-text-style";
 import BulletList from "@tiptap/extension-bullet-list";
 import OrderedList from "@tiptap/extension-ordered-list";
 import Placeholder from "@tiptap/extension-placeholder";
-import Image from "next/image";
 import ImageUpload from "public/icons/imageUpload.svg";
-import textColor from "public/icons/textColor.svg";
+import TextColor from "public/icons/textColor.svg";
 
 import CommonModal from "@/components/modal/CommonModal";
 import postImage from "@/apis/image/postImage";
@@ -42,7 +41,10 @@ function MantineEditor(
 
   const editorInstance = useEditor({
     extensions: [
-      StarterKit,
+      StarterKit.configure({
+        bulletList: false,
+        orderedList: false,
+      }),
       Underline,
       Link,
       Superscript,
@@ -152,7 +154,7 @@ function MantineEditor(
               <Popover opened={colorPickerOpen} onClose={() => setColorPickerOpen(false)} position="bottom" withArrow>
                 <Popover.Target>
                   <RichTextEditor.Control onClick={() => setColorPickerOpen(o => !o)} aria-label="텍스트 색상 선택">
-                    <Image src={textColor} alt="텍스트 색상 선택" height={20} width={20} />
+                    <TextColor />
                   </RichTextEditor.Control>
                 </Popover.Target>
                 <Popover.Dropdown>
@@ -173,7 +175,7 @@ function MantineEditor(
               </Popover>
 
               <RichTextEditor.Control onClick={handleActive} aria-label="이미지 업로드" title="이미지 업로드">
-                <Image src={ImageUpload} alt="이미지 업로드" height={14} width={14} />
+                <ImageUpload />
               </RichTextEditor.Control>
             </RichTextEditor.ControlsGroup>
           </div>
