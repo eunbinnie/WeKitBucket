@@ -9,15 +9,17 @@ interface ICommentSection {
   user: IUser | null;
 }
 
+/**
+ * @TODO limit 10으로 변경 필요. 현재 테스트 중
+ */
+const COMMENT_LIMIT = 3;
+
 function CommentSection({ id, user }: ICommentSection) {
   const [commentList, setCommentList] = useState<ICommentList[] | null>(null);
 
   const fetchArticleComment = useCallback(async () => {
     try {
-      /**
-       * @TODO limit 10으로 변경 필요. 현재 테스트 중
-       */
-      const data = await getComment({ articleId: id, limit: 3 });
+      const data = await getComment({ articleId: id, limit: COMMENT_LIMIT });
       setCommentList(data?.list);
     } catch (error) {
       console.error("Failed to fetch Article Comment: ", error);
