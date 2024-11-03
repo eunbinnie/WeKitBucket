@@ -9,10 +9,7 @@ interface ICommentSection {
   user: IUser | null;
 }
 
-/**
- * @TODO limit 10으로 변경 필요. 현재 테스트 중
- */
-const COMMENT_LIMIT = 3;
+const COMMENT_LIMIT = 100;
 
 function CommentSection({ id, user }: ICommentSection) {
   const [commentList, setCommentList] = useState<ICommentList[] | null>(null);
