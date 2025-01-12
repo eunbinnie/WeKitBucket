@@ -9,7 +9,7 @@ interface ICommentSection {
   user: IUser | null;
 }
 
-const COMMENT_LIMIT = 10;
+const COMMENT_LIMIT = 100;
 
 function CommentSection({ id, user }: ICommentSection) {
   const [commentList, setCommentList] = useState<ICommentList[] | null>(null);
