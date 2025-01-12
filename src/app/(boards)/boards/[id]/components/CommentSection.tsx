@@ -9,12 +9,14 @@ interface ICommentSection {
   user: IUser | null;
 }
 
+const COMMENT_LIMIT = 10;
+
 function CommentSection({ id, user }: ICommentSection) {
   const [commentList, setCommentList] = useState<ICommentList[] | null>(null);
 
   const fetchArticleComment = useCallback(async () => {
     try {
-      const data = await getComment({ articleId: id, limit: 10 });
+      const data = await getComment({ articleId: id, limit: COMMENT_LIMIT });
       setCommentList(data?.list);
     } catch (error) {
       console.error("Failed to fetch Article Comment: ", error);
