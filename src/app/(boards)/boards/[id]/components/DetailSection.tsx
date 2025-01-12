@@ -15,6 +15,7 @@ import dayjs from "dayjs";
 import { useRouter } from "next/navigation";
 import deleteArticlesId from "@/apis/article/deleteArticlesId";
 import CommonModal from "@/components/modal/CommonModal";
+import { useAuth } from "@/context/AuthContext";
 import DeleteModal from "./DeleteModal";
 import Content from "./Content";
 
@@ -22,15 +23,15 @@ interface IArticleDetailProps {
   article: ArticleDetail;
   articleId: number;
   content: string | Promise<string>;
-  myId: number | undefined;
 }
 
-function DetailSection({ article, articleId, content, myId }: IArticleDetailProps) {
+function DetailSection({ article, articleId, content }: IArticleDetailProps) {
   const router = useRouter();
+  const { user } = useAuth();
   const [options, setOptions] = useState<ArticleDetail>(article);
   const [viewModal, setViewModal] = useState(false);
   const formattedDate = dayjs(options.createdAt).format("YYYY.MM.DD.");
-  const isMyPost = options.writer.id === myId;
+  const isMyPost = options.writer.id === user?.id;
 
   const handleViewModal = () => {
     setViewModal(!viewModal);
@@ -54,7 +55,7 @@ function DetailSection({ article, articleId, content, myId }: IArticleDetailProp
 
   const handleClickLikeButton = async () => {
     try {
-      if (!myId) {
+      if (!user?.id) {
         throw new Error("User is not authenticated");
       }
       let res;
