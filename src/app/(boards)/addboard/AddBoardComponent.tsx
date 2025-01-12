@@ -7,7 +7,7 @@ import postArticles, { ArticleInput } from "@/apis/article/postArticles";
 import patchArticlesId from "@/apis/article/patchArticlesId";
 import getArticlesId from "@/apis/article/getArticlesId";
 import getUsersMe from "@/apis/user/getUsersMe";
-import Modal from "@/components/modal/Modal";
+import CommonModal from "@/components/modal/CommonModal";
 import CustomButton from "./CustomButton";
 import MantineEditor from "./mantineEditor";
 
@@ -184,8 +184,8 @@ function AddBoardComponent({ articleId, initialTitle = "", initialImageUrl }: Ad
           <MantineEditor ref={editorRef} setContent={handleEditorChange} initialContent="" setImageUrl={setImageUrl} />
         </div>
       </div>
-      <Modal active={isModalActive} close={() => setIsModalActive(false)}>
-        <div className="w-[600px] rounded-lg bg-white p-4 shadow-lg">
+      <CommonModal active={isModalActive} close={() => setIsModalActive(false)}>
+        <div className="mt-[10px] grid gap-[10px]">
           <h3 className="text-xl-medium">임시 저장된 게시글이 있습니다. 불러오시겠습니까?</h3>
           <div className="mt-4 flex justify-end gap-4">
             <button className="rounded bg-primary-green-200 px-4 py-2 text-white" onClick={handleLoadDraft}>
@@ -196,7 +196,7 @@ function AddBoardComponent({ articleId, initialTitle = "", initialImageUrl }: Ad
             </button>
           </div>
         </div>
-      </Modal>
+      </CommonModal>
     </div>
   );
 }
