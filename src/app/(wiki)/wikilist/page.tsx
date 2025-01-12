@@ -18,7 +18,7 @@ async function WikiList({ searchParams }: { searchParams: { keyword: string; num
   const { list, totalCount } = await getProfiles({ page: number, name: keyword, pageSize });
 
   return (
-    <div className="mx-auto mt-20 max-w-[900px] px-5">
+    <div className="mx-auto max-w-[900px] px-5 py-20">
       <Input />
       <p className="mb-10 mt-4 h-[18.4px] text-sm-regular-14 font-medium text-primary-gray-400 md:mb-24 md:text-sm-regular xl:mb-14">
         {!keyword ? (

@@ -7,26 +7,14 @@ import { marked } from "marked";
 import { useAuth } from "@/context/AuthContext";
 import getArticlesId from "@/apis/article/getArticlesId";
 import { ArticleDetail } from "@/apis/article/deleteArticlesLike";
-import getComment, { ICommentList } from "@/apis/comment/getComment";
-import CommentForm from "./components/CommentForm";
-import CommentList from "./components/CommentList";
 import DetailSection from "./components/DetailSection";
+import CommentSection from "./components/CommentSection";
 
 function PostDetail({ params }: { params: { id: number } }) {
   const { id } = params;
   const { user } = useAuth();
   const [articleDetail, setArticleDetail] = useState<ArticleDetail | null>(null);
   const [articleContent, setArticleContent] = useState<string | Promise<string>>("");
-  const [commentList, setCommentList] = useState<ICommentList[] | null>(null);
-
-  const fetchArticleComment = async () => {
-    try {
-      const data = await getComment({ articleId: id, limit: 100 });
-      setCommentList(data?.list);
-    } catch (error) {
-      console.error("Failed to fetch Article Comment: ", error);
-    }
-  };
 
   useEffect(() => {
     const fetchArticleDetail = async () => {
@@ -41,7 +29,6 @@ function PostDetail({ params }: { params: { id: number } }) {
     };
 
     fetchArticleDetail();
-    fetchArticleComment();
   }, [id]);
 
   return (
@@ -55,17 +42,7 @@ function PostDetail({ params }: { params: { id: number } }) {
           목록으로
         </button>
       </Link>
-      <section>
-        <div className="font-semibold leading-[1.7] text-primary-gray-500 sm:text-lg sm:leading-[1.4]">
-          댓글 <span className="text-primary-green-200">{commentList?.length}</span>
-        </div>
-        <CommentForm articleId={id} onCommentSubmitted={fetchArticleComment} myId={user?.id} />
-        <ul className="grid gap-[14px] sm:gap-4 lg:gap-6">
-          {commentList?.map(comment => (
-            <CommentList list={comment} key={comment.id} myId={user?.id} onChangeApi={fetchArticleComment} />
-          ))}
-        </ul>
-      </section>
+      <CommentSection id={id} user={user} />
     </main>
   );
 }
