@@ -1,5 +1,6 @@
 import { ArticleData } from "@/types/articles.type";
 import fetchInstance from "@/utils/fetchInstance";
+import { revalidatePath } from "next/cache";
 
 type getArticlesType = {
   page?: number;
@@ -15,6 +16,7 @@ const getArticles = async (options: getArticlesType) => {
       params: options,
     });
 
+    revalidatePath("/(boards)/boards", "page");
     return data;
   } catch (error) {
     if (error instanceof Error) {
