@@ -1,19 +1,18 @@
 "use client";
 
-import React from "react";
-import dayjs from "dayjs";
 import Link from "next/link";
 import useImageLoad from "@/hooks/useImageLoad";
 import LikeIcon from "public/icons/like.svg";
 import CameraIcon from "public/icons/camera.svg";
 import Image from "next/image";
+import useFormattedDate from "@/hooks/useFormattedDate";
 import { IPostProps } from "../allArticles/PostList";
 
 function BestPostCard({ post }: IPostProps) {
   const { id, title, image, createdAt, writer, likeCount } = post;
   const { name } = writer;
   const imageError = useImageLoad(image);
-  const formattedDate = dayjs(createdAt).format("YYYY.MM.DD.");
+  const formattedDate = useFormattedDate(createdAt);
 
   return (
     <Link

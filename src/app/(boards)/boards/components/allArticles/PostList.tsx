@@ -4,8 +4,9 @@ import React from "react";
 import LikeIcon from "public/icons/like.svg";
 
 import Link from "next/link";
-import dayjs from "dayjs";
+
 import { ArticleList } from "@/types/articles.type";
+import useFormattedDate from "@/hooks/useFormattedDate";
 
 export interface IPostProps {
   post: ArticleList;
@@ -15,7 +16,7 @@ function PostList({ post }: IPostProps) {
   const { id, title, createdAt, writer, likeCount } = post;
   const { name } = writer;
 
-  const formattedDate = dayjs(createdAt).format("YYYY.MM.DD.");
+  const formattedDate = useFormattedDate(createdAt);
 
   return (
     <li className="board-tr w-full overflow-hidden border-b border-solid border-primary-gray-200 pb-[10px]">
