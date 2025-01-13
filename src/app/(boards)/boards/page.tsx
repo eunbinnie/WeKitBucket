@@ -32,9 +32,9 @@ async function Board() {
     <div className="mx-auto mb-[57px] mt-10 grid gap-5">
       <section className="grid gap-5">
         <BestHeader />
-        <BestPostList article={bestArticles} />
+        {bestArticles && <BestPostList article={bestArticles} />}
       </section>
-      <AllArticleSection article={allArticles} />
+      {allArticles && <AllArticleSection article={allArticles} />}
     </div>
   );
 }
