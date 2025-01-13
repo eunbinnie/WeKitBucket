@@ -1,7 +1,6 @@
 "use server";
 
 import fetchInstance from "@/utils/fetchInstance";
-import { revalidatePath } from "next/cache";
 import { ArticleDetail } from "./deleteArticlesLike";
 
 // 자유게시판 페이지
@@ -11,7 +10,6 @@ const getArticlesId = async (articleId: number) => {
       method: "GET",
     });
 
-    revalidatePath("(boards)/boards/[id]", "page");
     return data;
   } catch (error) {
     if (error instanceof Error) {

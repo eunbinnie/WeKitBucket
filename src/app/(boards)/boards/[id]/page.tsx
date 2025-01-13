@@ -4,6 +4,8 @@ import getArticlesId from "@/apis/article/getArticlesId";
 import DetailSection from "./components/DetailSection";
 import CommentSection from "./components/CommentSection";
 
+export const dynamic = "force-dynamic";
+
 async function PostDetail({ params }: { params: { id: number } }) {
   const { id } = params;
 

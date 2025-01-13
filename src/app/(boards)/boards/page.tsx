@@ -25,8 +25,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 async function Board() {
-  const allArticles = await getArticles(allArticlesOption);
-  const bestArticles = await getArticles(bestArticlesOption);
+  const [allArticles, bestArticles] = await Promise.all([
+    getArticles(allArticlesOption),
+    getArticles(bestArticlesOption),
+  ]);
 
   return (
     <div className="mx-auto mb-[57px] mt-10 grid gap-5">
