@@ -1,12 +1,14 @@
 import { ArticleData } from "@/types/articles.type";
 import fetchInstance from "@/utils/fetchInstance";
 
-const getArticles = async (options?: {
+type getArticlesType = {
   page?: number;
   pageSize?: number;
   orderBy?: "recent" | "like";
   keyword?: string;
-}) => {
+};
+
+const getArticles = async (options: getArticlesType) => {
   try {
     const data = await fetchInstance<ArticleData>("articles", {
       method: "GET",

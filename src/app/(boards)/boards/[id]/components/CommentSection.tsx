@@ -1,17 +1,19 @@
+"use client";
+
 import { useCallback, useEffect, useState } from "react";
 import getComment, { ICommentList } from "@/apis/comment/getComment";
-import { IUser } from "@/types/user.type";
+import { useAuth } from "@/context/AuthContext";
 import CommentForm from "./CommentForm";
 import CommentList from "./CommentList";
 
 interface ICommentSection {
   id: number;
-  user: IUser | null;
 }
 
 const COMMENT_LIMIT = 100;
 
-function CommentSection({ id, user }: ICommentSection) {
+function CommentSection({ id }: ICommentSection) {
+  const { user } = useAuth();
   const [commentList, setCommentList] = useState<ICommentList[] | null>(null);
 
   const fetchArticleComment = useCallback(async () => {

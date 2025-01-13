@@ -15,6 +15,7 @@ import dayjs from "dayjs";
 import { useRouter } from "next/navigation";
 import deleteArticlesId from "@/apis/article/deleteArticlesId";
 import CommonModal from "@/components/modal/CommonModal";
+import { useAuth } from "@/context/AuthContext";
 import DeleteModal from "./DeleteModal";
 import Content from "./Content";
 
@@ -22,11 +23,12 @@ interface IArticleDetailProps {
   article: ArticleDetail;
   articleId: number;
   content: string | Promise<string>;
-  myId: number | undefined;
 }
 
-function DetailSection({ article, articleId, content, myId }: IArticleDetailProps) {
+function DetailSection({ article, articleId, content }: IArticleDetailProps) {
   const router = useRouter();
+  const { user } = useAuth();
+  const myId = user?.id;
   const [options, setOptions] = useState<ArticleDetail>(article);
   const [viewModal, setViewModal] = useState(false);
   const formattedDate = dayjs(options.createdAt).format("YYYY.MM.DD.");
