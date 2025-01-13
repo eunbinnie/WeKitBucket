@@ -3,10 +3,10 @@
 import React from "react";
 import dayjs from "dayjs";
 import Link from "next/link";
-import NextImage from "next/image";
 import useImageLoad from "@/hooks/useImageLoad";
 import LikeIcon from "public/icons/like.svg";
 import CameraIcon from "public/icons/camera.svg";
+import Image from "next/image";
 import { IPostProps } from "../allArticles/PostList";
 
 function BestPostCard({ post }: IPostProps) {
@@ -24,7 +24,7 @@ function BestPostCard({ post }: IPostProps) {
         <div className="flex-1">
           {imageError === false && image ? (
             <div className="relative flex h-full items-center justify-center">
-              <NextImage src={image} alt={title} fill sizes="max-width:100%" priority style={{ objectFit: "cover" }} />
+              <Image src={image} alt={title} fill sizes="max-width:100%" priority style={{ objectFit: "cover" }} />
             </div>
           ) : (
             imageError === true && (
