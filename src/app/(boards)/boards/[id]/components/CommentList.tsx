@@ -7,13 +7,14 @@ import DefaultProfile from "public/icons/defaultProfile.svg";
 import EditIcon from "public/icons/pencilIcon.svg";
 import DeleteIcon from "public/icons/trashIcon.svg";
 import { ICommentList } from "@/apis/comment/getComment";
-import dayjs from "dayjs";
+
 import Image from "next/image";
 import useImageLoad from "@/hooks/useImageLoad";
 import deleteComment from "@/apis/comment/deleteComment";
 import patchComment from "@/apis/comment/patchComment";
 
 import CommonModal from "@/components/modal/CommonModal";
+import useFormattedDate from "@/hooks/useFormattedDate";
 import DeleteModal from "./DeleteModal";
 import { LIMIT } from "./CommentForm";
 
@@ -31,7 +32,7 @@ function CommentList({ list, myId, onChangeApi }: ICommentListProps) {
   const [commentValue, setCommentValue] = useState(content);
   const [commentCount, setCommentCount] = useState(content.length);
   const isMyComment = writerId === myId;
-  const formattedDate = dayjs(createdAt).format("YYYY.MM.DD.");
+  const formattedDate = useFormattedDate(createdAt);
   const imageError = useImageLoad(image);
 
   const handleViewModal = () => {
