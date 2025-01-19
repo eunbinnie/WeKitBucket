@@ -1,17 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import useImageLoad from "@/hooks/useImageLoad";
 import LikeIcon from "public/icons/like.svg";
 import CameraIcon from "public/icons/camera.svg";
 import Image from "next/image";
 import useFormattedDate from "@/hooks/useFormattedDate";
+import { useState } from "react";
 import { IPostProps } from "../allArticles/PostList";
 
 function BestPostCard({ post }: IPostProps) {
   const { id, title, image, createdAt, writer, likeCount } = post;
   const { name } = writer;
-  const imageError = useImageLoad(image);
+  const [isImageError, setIsImageError] = useState(false);
+  const isImageLoadError = isImageError || image?.includes("example.com");
   const formattedDate = useFormattedDate(createdAt);
 
   return (
@@ -21,16 +22,20 @@ function BestPostCard({ post }: IPostProps) {
     >
       <div className="flex h-full flex-col overflow-hidden rounded-[10px] shadow-custom-shadow">
         <div className="flex-1">
-          {imageError === false && image ? (
-            <div className="relative flex h-full items-center justify-center">
-              <Image src={image} alt={title} fill sizes="max-width:100%" priority style={{ objectFit: "cover" }} />
+          {image ? (
+            <div className="relative flex h-full items-center justify-center rounded-t-[10px] bg-primary-gray-100">
+              <Image
+                src={isImageLoadError ? "/icons/camera.svg" : image}
+                alt={title}
+                {...(isImageLoadError ? { width: 24, height: 24 } : { fill: true })}
+                sizes="max-width:100%"
+                priority
+                style={{ objectFit: "cover" }}
+                onError={() => setIsImageError(true)}
+              />
             </div>
           ) : (
-            imageError === true && (
-              <div className="flex h-full items-center justify-center rounded-t-[10px] bg-primary-gray-100">
-                <CameraIcon />
-              </div>
-            )
+            <CameraIcon />
           )}
         </div>
         <div className="grid px-5 pb-[15px] pt-[10px] sm:gap-[6px] sm:pb-[14px] sm:pt-5">
