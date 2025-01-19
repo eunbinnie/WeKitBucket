@@ -11,8 +11,9 @@ import { IPostProps } from "../allArticles/PostList";
 function BestPostCard({ post }: IPostProps) {
   const { id, title, image, createdAt, writer, likeCount } = post;
   const { name } = writer;
-  const formattedDate = useFormattedDate(createdAt);
   const [isImageError, setIsImageError] = useState(false);
+  const isImageLoadError = isImageError || image?.includes("example.com");
+  const formattedDate = useFormattedDate(createdAt);
 
   return (
     <Link
@@ -24,9 +25,9 @@ function BestPostCard({ post }: IPostProps) {
           {image ? (
             <div className="relative flex h-full items-center justify-center rounded-t-[10px] bg-primary-gray-100">
               <Image
-                src={isImageError ? "/icons/camera.svg" : image}
+                src={isImageLoadError ? "/icons/camera.svg" : image}
                 alt={title}
-                {...(isImageError ? { width: 24, height: 24 } : { fill: true })}
+                {...(isImageLoadError ? { width: 24, height: 24 } : { fill: true })}
                 sizes="max-width:100%"
                 priority
                 style={{ objectFit: "cover" }}
